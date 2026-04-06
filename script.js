@@ -393,13 +393,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             el.addEventListener('pointermove', (e) => {
                 if (!this.isDragging) return;
-                const now = performance.now();
-                const dx  = e.clientX - this.lastDragX;
-                const dt  = now - this.lastDragT || 1;
-                // dx < 0 (drag left) → pos increases → visual left shift
-                // dx > 0 (drag right) → pos decreases → visual right shift
-                this.dragVel = -(dx / dt) * 16;
-                this.pos    -= dx;
+                const now  = performance.now();
+                const dx   = e.clientX - this.lastDragX;
+                const dt   = now - this.lastDragT || 1;
+                // For goRight rows, pos↑ = rightward. So drag-left must DECREASE pos.
+                // For goLeft rows,  pos↑ = leftward.  So drag-left must INCREASE pos.
+                // dragSign flips the relationship for goRight rows.
+                const dragSign = this.goRight ? 1 : -1;
+                this.dragVel = dragSign * (dx / dt) * 16;
+                this.pos    += dragSign * dx;
                 this._applyTransform();
                 this.lastDragX = e.clientX;
                 this.lastDragT = now;
@@ -425,11 +427,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }, { passive: true });
             el.addEventListener('touchmove', (e) => {
                 if (!this.isDragging) return;
-                const now = performance.now();
-                const dx  = e.touches[0].clientX - lastTX;
-                const dt  = now - lastTTime || 1;
-                tVel      = -(dx / dt) * 16;
-                this.pos -= dx;
+                const now      = performance.now();
+                const dx       = e.touches[0].clientX - lastTX;
+                const dt       = now - lastTTime || 1;
+                const dragSign = this.goRight ? 1 : -1;
+                tVel      = dragSign * (dx / dt) * 16;
+                this.pos += dragSign * dx;
                 this._applyTransform();
                 lastTX    = e.touches[0].clientX;
                 lastTTime = now;
@@ -446,11 +449,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const row2 = document.querySelector('.proj-row.row-2');
 
     if (row1) {
-        // Row 1: drifts LEFT — very slow, elegant (0.08 px/frame ≈ 5 px/s at 60fps)
-        new InfiniteCarousel(row1, 0.08, false, 0.96);
+        // Row 1: drifts LEFT — slow, elegant (0.05 px/frame ≈ 3 px/s at 60fps)
+        new InfiniteCarousel(row1, 0.05, false, 0.96);
     }
     if (row2) {
-        // Row 2: drifts RIGHT — slightly slower for visual depth (0.06 px/frame)
-        new InfiniteCarousel(row2, 0.06, true, 0.96);
+        // Row 2: drifts RIGHT — slightly slower for depth (0.04 px/frame)
+        new InfiniteCarousel(row2, 0.04, true, 0.96);
     }
 });
