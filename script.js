@@ -113,7 +113,7 @@ const translations = {
   }
 };
 
-let currentLang = 'pt';
+let currentLang = 'en';
 
 function toggleLang() {
   currentLang = currentLang === 'pt' ? 'en' : 'pt';
@@ -270,5 +270,6 @@ window.addEventListener('scroll', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    applyLang('en');
     initProcessProgress();
 });
