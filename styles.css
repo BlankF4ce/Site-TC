@@ -881,41 +881,28 @@ section {
   gap: 1.5rem;
   width: max-content;
   padding: 0.5rem 0;
+  will-change: transform;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-.row-1 {
-  animation: scrollLeft 60s linear infinite;
-}
-
-.row-2 {
-  animation: scrollRight 75s linear infinite;
-}
-
-.proj-carousel:hover .proj-row {
-  animation-play-state: paused;
-}
-
-@keyframes scrollLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-50% - 0.75rem)); }
-}
-
-@keyframes scrollRight {
-  0% { transform: translateX(calc(-50% - 0.75rem)); }
-  100% { transform: translateX(0); }
+.proj-row.is-dragging {
+  cursor: grabbing;
 }
 
 .proj-card {
   position: relative;
   border-radius: 6px;
   overflow: hidden;
-  width: 310px; /* Reduced from 400px */
+  width: 280px;
   aspect-ratio: 16 / 10;
   flex-shrink: 0;
   border: 1px solid var(--border);
   cursor: pointer;
   background: var(--dark3);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s, box-shadow 0.4s;
+  pointer-events: auto;
 }
 
 .proj-card:hover {
@@ -967,16 +954,13 @@ section {
   }
 
   .proj-card {
-    width: 240px;
+    width: 200px;
   }
   
   .proj-carousel::before,
   .proj-carousel::after {
     width: 5rem;
   }
-
-  .row-1 { animation-duration: 40s; }
-  .row-2 { animation-duration: 50s; }
 }
 
 .p-info {
@@ -986,9 +970,9 @@ section {
   right: 0;
   padding: 1.5rem;
   z-index: 5;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   opacity: 0;
-  transform: translateY(15px);
+  transform: translateY(12px);
   pointer-events: none;
 }
 

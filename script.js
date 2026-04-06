@@ -295,4 +295,162 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // =====================================================
+    // INFINITE CAROUSEL ENGINE — JS-driven RAF loop
+    // =====================================================
+    class InfiniteCarousel {
+        /**
+         * @param {HTMLElement} rowEl   - The .proj-row element
+         * @param {number}      speed   - px per frame, ALWAYS POSITIVE
+         * @param {boolean}     goRight - false = moves left, true = moves right
+         * @param {number}      friction
+         */
+        constructor(rowEl, speed, goRight = false, friction = 0.96) {
+            this.el       = rowEl;
+            this.speed    = speed;
+            this.goRight  = goRight;
+            this.friction = friction;
+
+            // pos always increases, [0, halfWidth)
+            this.pos = 0;
+            this.vel = 0;
+
+            // Drag state
+            this.isDragging = false;
+            this.lastDragX  = 0;
+            this.lastDragT  = 0;
+            this.dragVel    = 0;
+
+            // Hover-pause
+            this.isHovered = false;
+            this.halfWidth = 0;
+
+            this._tick = this._tick.bind(this);
+
+            // Measure after a paint so scrollWidth is accurate
+            requestAnimationFrame(() => {
+                this.halfWidth = this.el.scrollWidth / 2;
+                // Right-moving row starts mid-way for visual variety
+                if (this.goRight) this.pos = this.halfWidth / 2;
+                this._bindHoverPause();
+                this._bindPointerEvents();
+                this._bindTouchEvents();
+                requestAnimationFrame(this._tick);
+            });
+        }
+
+        // Normalise pos and apply transform based on direction
+        _applyTransform() {
+            const hw = this.halfWidth;
+            if (hw <= 0) return;
+            this.pos = ((this.pos % hw) + hw) % hw;
+            if (!this.goRight) {
+                // Left: pos 0→hw  →  translateX 0→-hw
+                this.el.style.transform = `translateX(${-this.pos}px)`;
+            } else {
+                // Right: pos 0→hw  →  translateX -hw→0  (cards drift right)
+                this.el.style.transform = `translateX(${this.pos - hw}px)`;
+            }
+        }
+
+        _tick() {
+            if (!this.isDragging) {
+                if (!this.isHovered) {
+                    this.vel += this.speed;
+                }
+                this.vel *= this.friction;
+                // Prevent velocity dying to zero during auto-scroll
+                if (!this.isHovered && this.vel < this.speed * 0.3) {
+                    this.vel = this.speed;
+                }
+            } else {
+                this.vel *= this.friction;
+            }
+            this.pos += this.vel;
+            this._applyTransform();
+            requestAnimationFrame(this._tick);
+        }
+
+        _bindHoverPause() {
+            this.el.querySelectorAll('.proj-card').forEach(card => {
+                card.addEventListener('mouseenter', () => { this.isHovered = true; });
+                card.addEventListener('mouseleave', () => { this.isHovered = false; });
+            });
+        }
+
+        _bindPointerEvents() {
+            const el = this.el;
+            el.addEventListener('pointerdown', (e) => {
+                this.isDragging = true;
+                this.lastDragX  = e.clientX;
+                this.lastDragT  = performance.now();
+                this.dragVel    = 0;
+                this.vel        = 0;
+                el.classList.add('is-dragging');
+                el.setPointerCapture(e.pointerId);
+                e.preventDefault();
+            });
+            el.addEventListener('pointermove', (e) => {
+                if (!this.isDragging) return;
+                const now = performance.now();
+                const dx  = e.clientX - this.lastDragX;
+                const dt  = now - this.lastDragT || 1;
+                // dx < 0 (drag left) → pos increases → visual left shift
+                // dx > 0 (drag right) → pos decreases → visual right shift
+                this.dragVel = -(dx / dt) * 16;
+                this.pos    -= dx;
+                this._applyTransform();
+                this.lastDragX = e.clientX;
+                this.lastDragT = now;
+            });
+            const endDrag = () => {
+                if (!this.isDragging) return;
+                this.isDragging = false;
+                this.vel = this.dragVel;
+                el.classList.remove('is-dragging');
+            };
+            el.addEventListener('pointerup',     endDrag);
+            el.addEventListener('pointercancel', endDrag);
+        }
+
+        _bindTouchEvents() {
+            const el = this.el;
+            let lastTX = 0, lastTTime = 0, tVel = 0;
+            el.addEventListener('touchstart', (e) => {
+                lastTX    = e.touches[0].clientX;
+                lastTTime = performance.now();
+                tVel      = 0;
+                this.isDragging = true;
+            }, { passive: true });
+            el.addEventListener('touchmove', (e) => {
+                if (!this.isDragging) return;
+                const now = performance.now();
+                const dx  = e.touches[0].clientX - lastTX;
+                const dt  = now - lastTTime || 1;
+                tVel      = -(dx / dt) * 16;
+                this.pos -= dx;
+                this._applyTransform();
+                lastTX    = e.touches[0].clientX;
+                lastTTime = now;
+            }, { passive: true });
+            el.addEventListener('touchend', () => {
+                this.isDragging = false;
+                this.vel = tVel;
+            });
+        }
+    }
+
+    // ---- Instantiate both rows ----
+    const row1 = document.querySelector('.proj-row.row-1');
+    const row2 = document.querySelector('.proj-row.row-2');
+
+    if (row1) {
+        // Row 1: drifts LEFT — very slow, elegant (0.08 px/frame ≈ 5 px/s at 60fps)
+        new InfiniteCarousel(row1, 0.08, false, 0.96);
+    }
+    if (row2) {
+        // Row 2: drifts RIGHT — slightly slower for visual depth (0.06 px/frame)
+        new InfiniteCarousel(row2, 0.06, true, 0.96);
+    }
 });
