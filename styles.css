@@ -358,6 +358,12 @@ nav {
   }
 }
 
+@media(max-width:768px) {
+  .hero-process {
+    display: none !important;
+  }
+}
+
 .process-header {
   margin-bottom: 0.5rem;
   opacity: 0;
