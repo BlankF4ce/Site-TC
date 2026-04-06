@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TranslaCAT – Tradução & Localização</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo anim-hero" style="animation-delay: 0s;">
+      <img src="img/Tc_Botão_landing_page-removebg-preview.png" style="height:80px;width:auto;object-fit:contain;filter:brightness(0)"
+        alt="TranslaCAT">
+    </a>
+    <ul class="nav-links">
+      <li class="anim-hero" style="animation-delay: 0.1s;"><a href="#projects" id="nav-projects">Projetos</a></li>
+      <li class="anim-hero" style="animation-delay: 0.2s;"><a href="#philosophy" id="nav-philo">Filosofia</a></li>
+      <li class="anim-hero" style="animation-delay: 0.3s;"><a href="#services" id="nav-services">Serviços</a></li>
+      <li class="anim-hero" style="animation-delay: 0.4s;"><a href="#about" id="nav-about">Sobre</a></li>
+      <li class="anim-hero" style="animation-delay: 0.5s;"><a href="#team" id="nav-team">Equipe</a></li>
+      <li class="anim-hero" style="animation-delay: 0.6s;"><a href="#contact" id="nav-contact">Contato</a></li>
+      <li class="nav-cta anim-hero" style="animation-delay: 0.7s;"><a href="mailto:pm@translacat.com"
+          id="nav-cta">Solicitar Orçamento</a></li>
+      <button onclick="toggleLang()" id="lang-btn" class="anim-hero"
+        style="animation-delay: 0.8s; background:none;border:1px solid rgba(0,0,0,0.1);color:var(--dark);padding:.35rem .8rem;border-radius:2px;cursor:pointer;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-h);font-weight:600;transition:all .2s;margin-left:.5rem"
+        onmouseover="this.style.borderColor='var(--red)';this.style.color='var(--red)'"
+        onmouseout="this.style.borderColor='rgba(0,0,0,0.1)';this.style.color='var(--dark)'">EN</button>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <video autoplay loop muted playsinline class="hero-video">
+      <source src="img/vecteezy_blue-cream-soft-abstract-gradient-background-with-smooth_69331563.mp4" type="video/mp4">
+    </video>
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-process">
+      <div class="process-header">
+        <div class="process-icon-box">🌐</div>
+        <div class="process-title" id="proc-title">Pares de Idioma</div>
+        <div class="process-sub" id="proc-sub">Localização EN↔PT-BR com qualidade nativa garantida.</div>
+        <div class="proc-progress">
+          <div class="proc-progress-fill" id="proc-fill"></div>
+        </div>
+      </div>
+      <div class="process-card">
+        <div class="pc-left">
+          <div class="pc-flag">US</div>
+          <div class="pc-text" id="pc1-text">English <span>(Source)</span></div>
+        </div>
+        <div class="pc-status red" id="pc1-status">Origem</div>
+      </div>
+      <div class="process-card">
+        <div class="pc-left">
+          <div class="pc-flag">BR</div>
+          <div class="pc-text" id="pc2-text">Português-BR <span>(Target)</span></div>
+        </div>
+        <div class="pc-status done" id="pc2-status">Concluído</div>
+      </div>
+      <div class="process-sep"></div>
+      <div class="process-card">
+        <div class="pc-left">
+          <div class="pc-text" id="pc3-text">📋 QA Review</div>
+        </div>
+        <div class="pc-status" id="pc3-status">Em Revisão</div>
+      </div>
+      <div class="process-card">
+        <div class="pc-left">
+          <div class="pc-text" id="pc4-text">✅ Entrega Final</div>
+        </div>
+        <div class="pc-status done" id="pc4-status">Entregue ✓</div>
+      </div>
+    </div>
+    <div class="hero-inner">
+      <h1 class="hero-title anim-hero" id="hero-title" style="animation-delay: 1.2s;">Precisão em<br>cada <span
+          class="acc">palavra.</span><br>Paixão em<br>cada
+        projeto.</h1>
+      <p class="hero-sub anim-hero" id="hero-sub" style="animation-delay: 1.8s;">Tradução e localização especializada
+        para games, TI e engenharia técnica. +10
+        milhões de palavras traduzidas. Parceiros de líderes globais.</p>
+      <div class="hero-actions anim-hero" style="animation-delay: 2.4s;">
+        <a href="mailto:pm@translacat.com" class="btn-red" id="btn-orcamento">Solicitar Orçamento</a>
+        <a href="#projects" class="btn-ghost" id="btn-portfolio">Ver Portfólio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUSTED -->
+  <div class="trusted">
+    <div class="trusted-inner">
+      <span class="t-label" id="trusted-label">Confiado por líderes globais</span>
+      <div class="t-logos">
+        <span class="tlog">Blizzard</span>
+        <span class="tlog">CD Projekt RED</span>
+        <span class="tlog">Konami</span>
+        <span class="tlog">Amazon</span>
+        <span class="tlog">Electronic Arts</span>
+        <span class="tlog">Caterpillar</span>
+        <span class="tlog">Ubisoft</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="mx">
+      <div
+        style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:0">
+        <div>
+          <div class="s-lbl" id="proj-label">Portfólio</div>
+          <h2 class="s-title" id="proj-title">Projetos em Destaque</h2>
+        </div>
+        <a href="https://drive.google.com/file/d/1vAtKd_YNenFNIVVTwFgU1pyWDN9Yxjfh/view" target="_blank" class="btn-red"
+          id="btn-portfolio-full">Ver Portfólio Completo</a>
+      </div>
+      <div class="proj-grid">
+        <div class="proj-card">
+          <img src="img/cyberpunk.jpg"
+            style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s" alt="Cyberpunk 2077">
+          <div class="p-overlay"></div>
+          <div class="p-badge">Localização Completa</div>
+          <div class="p-info">
+            <div class="p-studio">CD Projekt RED</div>
+            <div class="p-name">Cyberpunk 2077</div>
+            <div class="p-type">Jogo base + DLC Phantom Liberty · Localização & LQA</div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <img src="img/wow.avif" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s"
+            alt="World of Warcraft">
+          <div class="p-overlay"></div>
+          <div class="p-badge">Lead Linguists</div>
+          <div class="p-info">
+            <div class="p-studio">Blizzard Entertainment</div>
+            <div class="p-name">World of Warcraft</div>
+            <div class="p-type">Jogo, embalagem & marketing · Lead Linguists</div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <img src="img/lifeisstrange.jpg"
+            style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s"
+            alt="Life is Strange">
+          <div class="p-overlay"></div>
+          <div class="p-badge">Localização Completa</div>
+          <div class="p-info">
+            <div class="p-studio">Dontnod / Square Enix</div>
+            <div class="p-name">Life is Strange</div>
+            <div class="p-type">Localização completa da série</div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <img src="img/liesp.avif"
+            style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s" alt="Lies of P">
+          <div class="p-overlay"></div>
+          <div class="p-badge">Localização Completa</div>
+          <div class="p-info">
+            <div class="p-studio">Neowiz & Round8 Studio</div>
+            <div class="p-name">Lies of P</div>
+            <div class="p-type">Localização completa do jogo</div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <img src="img/witcher3.avif"
+            style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s" alt="The Witcher 3">
+          <div class="p-overlay"></div>
+
+          <div class="p-info">
+            <div class="p-studio">CD Projekt RED</div>
+            <div class="p-name">The Witcher 3</div>
+
+          </div>
+        </div>
+        <div class="proj-card">
+          <img src="img/sky.avif" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s"
+            alt="Sky: Children of the Light">
+          <div class="p-overlay"></div>
+          <div class="p-badge">Localização Completa</div>
+          <div class="p-info">
+            <div class="p-studio">thatgamecompany</div>
+            <div class="p-name">Sky: Children of the Light</div>
+            <div class="p-type">Localização completa & marketing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section id="philosophy" style="padding:0;position:relative;overflow:hidden">
+    <div
+      style="position:relative;background:#0d0b0b;min-height:520px;display:flex;align-items:center;justify-content:center">
+      <div
+        style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,11,11,0.55) 0%,rgba(13,11,11,0.72) 40%,rgba(13,11,11,0.88) 100%);z-index:1">
+      </div>
+      <div
+        style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,255,255,0.018) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(255,255,255,0.018) 60px);z-index:0">
+      </div>
+      <div style="position:relative;z-index:2;text-align:center;padding:5rem 3rem;max-width:900px;margin:0 auto">
+        <div style="display:flex;align-items:center;justify-content:center;gap:.8rem;margin-bottom:2.5rem">
+          <div style="width:32px;height:1px;background:rgba(196,18,48,.7)"></div>
+          <span
+            style="font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(196,18,48,.8);font-weight:600;font-family:var(--font-h)"
+            id="philo-label">Filosofia</span>
+          <div style="width:32px;height:1px;background:rgba(196,18,48,.7)"></div>
+        </div>
+        <p id="philo-q1"
+          style="font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:clamp(1.1rem,2.5vw,1.5rem);color:rgba(220,210,200,0.7);line-height:1.5;margin-bottom:1.2rem">
+          "A tradução não é substituição de palavras."</p>
+        <div style="display:flex;align-items:center;justify-content:center;gap:.9rem;margin-bottom:1.2rem">
+          <div style="width:24px;height:1px;background:rgba(255,255,255,0.18)"></div>
+          <span id="philo-masim"
+            style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);font-family:var(--font-h)">mas
+            sim</span>
+          <div style="width:24px;height:1px;background:rgba(255,255,255,0.18)"></div>
+        </div>
+        <p id="philo-q2"
+          style="font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:clamp(1.1rem,2.5vw,1.5rem);color:rgba(220,210,200,0.7);line-height:1.5;margin-bottom:3.5rem">
+          "É transplante de significado entre culturas."</p>
+        <div style="text-align:left;border-top:1px solid rgba(255,255,255,0.07);padding-top:3rem">
+          <p id="philo-big1"
+            style="font-family:var(--font-h);font-size:clamp(2rem,5vw,3.8rem);font-weight:700;line-height:1.05;letter-spacing:-.02em;color:var(--text)">
+            Enquanto outros traduzem <span style="color:var(--red);font-style:italic">palavras,</span></p>
+          <p id="philo-big2"
+            style="font-family:var(--font-h);font-size:clamp(2rem,5vw,3.8rem);font-weight:700;line-height:1.05;letter-spacing:-.02em;color:var(--text)">
+            nós localizamos <span style="color:var(--red);font-style:italic">experiências.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="svc-bg" id="services">
+    <div class="mx">
+      <div class="center">
+        <div class="s-lbl" id="svc-label">O que fazemos</div>
+        <h2 class="s-title" id="svc-title">Nossos Serviços</h2>
+        <p class="s-desc" id="svc-desc">Uma equipe diversificada com especialistas em tradução literária, áudio, sistema
+          e visual — tudo sob um mesmo teto.</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc-card"
+          style="background-image: linear-gradient(rgba(24, 24, 31, 0.8), rgba(24, 24, 31, 0.95)), url('img/games.jpg'); background-size: cover; background-position: center;">
+          <div class="svc-name" id="svc1-name">Games & Videogames</div>
+          <div class="svc-txt" id="svc1-txt">Localização completa de jogos: interface, motor, dublagem, marketing e LQA.
+            Atuamos desde casual games até los maiores títulos do mercado global.</div>
+          <a href="#projects" class="svc-lnk" id="svc1-lnk">Saiba Mais</a>
+        </div>
+        <div class="svc-card"
+          style="background-image: linear-gradient(rgba(24, 24, 31, 0.8), rgba(24, 24, 31, 0.95)), url('img/ti.jpg'); background-size: cover; background-position: center;">
+          <div class="svc-name" id="svc2-name">TI & Software</div>
+          <div class="svc-txt" id="svc2-txt">Tradução de interfaces, documentação técnica e materiais de marketing para
+            empresas como Apple, Microsoft, Google, IBM e dezenas de outras.</div>
+          <a href="#projects" class="svc-lnk" id="svc2-lnk">Saiba Mais</a>
+        </div>
+        <div class="svc-card"
+          style="background-image: linear-gradient(rgba(24, 24, 31, 0.8), rgba(24, 24, 31, 0.95)), url('img/enge.jpg'); background-size: cover; background-position: center;">
+          <div class="svc-name" id="svc3-name">Engenharia & Técnico</div>
+          <div class="svc-txt" id="svc3-txt">Milhões de palavras traduzidas em manuais de maquinário pesado e
+            documentação automotiva para Caterpillar, Scania, Rolls Royce e outros.</div>
+          <a href="#projects" class="svc-lnk" id="svc3-lnk">Saiba Mais</a>
+        </div>
+        <div class="svc-card"
+          style="background-image: linear-gradient(rgba(24, 24, 31, 0.8), rgba(24, 24, 31, 0.95)), url('img/liter.jpg'); background-size: cover; background-position: center;">
+          <div class="svc-name" id="svc4-name">Literatura & Cultura</div>
+          <div class="svc-txt" id="svc4-txt">Tradução de romances, séries de aventura e conteúdo cultural disponíveis no
+            Amazon.com.br, além de mangas e material audiovisual.</div>
+          <a href="#projects" class="svc-lnk" id="svc4-lnk">Saiba Mais</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="ab-bg" id="about">
+    <div class="mx">
+      <div class="ab-grid">
+        <div>
+          <div class="s-lbl" id="ab-label">Sobre & Qualificações</div>
+          <h2 class="s-title" id="ab-title">Paixão que vira resultado profissional</h2>
+          <div class="ab-pts">
+            <div class="ab-pt">
+              <div class="ab-num">01</div>
+              <div>
+                <div class="ab-t" id="ab1-t">+25 anos de experiência combinada em TI</div>
+                <div class="ab-d" id="ab1-d">Nossa fundadora trabalhou por mais de 25 anos como programadora, analista
+                  de sistemas e analista de redes no governo federal — antes de se tornar referência em tradução
+                  técnica.</div>
+              </div>
+            </div>
+            <div class="ab-pt">
+              <div class="ab-num">02</div>
+              <div>
+                <div class="ab-t" id="ab2-t">Credenciada pelo Ministério da Educação</div>
+                <div class="ab-d" id="ab2-d">Tradutora reconhecida pelo MEC, com histórico como Lead Linguist na
+                  localização de World of Warcraft pela Blizzard Entertainment para o português brasileiro.</div>
+              </div>
+            </div>
+            <div class="ab-pt">
+              <div class="ab-num">03</div>
+              <div>
+                <div class="ab-t" id="ab3-t">Domínio de todas as ferramentas CAT</div>
+                <div class="ab-d" id="ab3-d">Uma das poucas empresas com domínio prático em praticamente todas as
+                  ferramentas de tradução assistida por computador disponíveis no mercado.</div>
+              </div>
+            </div>
+            <div class="ab-pt">
+              <div class="ab-num">04</div>
+              <div>
+                <div class="ab-t" id="ab4-t">Equipe diversificada e especializada</div>
+                <div class="ab-d" id="ab4-d">Especialistas em tradução literária, áudio, sistema e visual. PMs sêniores,
+                  tradutores criativos, revisores e localizadores de game engine.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="ab-stats">
+            <div class="ast">
+              <div class="ast-n">10<span>M+</span></div>
+              <div class="ast-l" id="stat1-l">Palavras traduzidas</div>
+            </div>
+            <div class="ast">
+              <div class="ast-n">500<span>+</span></div>
+              <div class="ast-l" id="stat2-l">Jogos localizados</div>
+            </div>
+            <div class="ast">
+              <div class="ast-n">15<span>+</span></div>
+              <div class="ast-l" id="stat3-l">Anos de mercado</div>
+            </div>
+            <div class="ast">
+              <div class="ast-n">3<span>+</span></div>
+              <div class="ast-l" id="stat4-l">Áreas de especialização</div>
+            </div>
+          </div>
+          <div class="tags-wrap">
+            <div class="tags-lbl" id="tags-lbl">Principais clientes de TI</div>
+            <div class="tags">
+              <span class="tag">Apple</span><span class="tag">Microsoft</span><span class="tag">Google</span><span
+                class="tag">IBM</span><span class="tag">Intel</span><span class="tag">Cisco</span><span
+                class="tag">Dell</span><span class="tag">HP</span><span class="tag">Netflix</span><span
+                class="tag">Amazon</span><span class="tag">Adobe</span><span class="tag">Autodesk</span><span
+                class="tag">Huawei</span><span class="tag">Honeywell</span><span class="tag">Lenovo</span><span
+                class="tag">Oracle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team" style="position:relative;overflow:hidden;background:none;padding:6rem 3rem">
+    <video id="team-bg-video" autoplay loop muted playsinline
+      style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0;transition:opacity 1.5s ease-in-out"></video>
+    <div
+      style="position:absolute;inset:0;background:linear-gradient(180deg, var(--dark2) 0%, rgba(17,17,22,0.35) 15%, rgba(17,17,22,0.35) 85%, var(--dark2) 100%);z-index:1;">
+    </div>
+    <div class="mx" style="position:relative;z-index:2">
+      <div class="center">
+        <div class="s-lbl" id="team-label">Nossa Equipe</div>
+        <h2 class="s-title" id="team-title">Quem está por trás da TranslaCAT</h2>
+        <p class="s-desc" id="team-desc">Um trio de especialistas apaixonados por linguagem, tecnologia e a arte de
+          comunicar com precisão.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-ini">CJ</div>
+          <div class="team-name">Christiane Jost</div>
+          <div class="team-role" id="cj-role">Fundadora · Lead Linguist</div>
+          <div class="team-bio" id="cj-bio">Mais de 25 anos como programadora e analista de sistemas no governo federal.
+            Lead Linguist na localização de World of Warcraft pela Blizzard. Com mais de 10 milhões de palavras
+            traduzidas, é conhecida como "máquina de tradução" e "glossário humano" pelo rigor ímpar na escrita técnica.
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-ini">DZ</div>
+          <div class="team-name">Daniel Zandonadi</div>
+          <div class="team-role" id="dz-role">Lead Linguist · Diretor Criativo</div>
+          <div class="team-bio" id="dz-bio">Farmacêutico de formação, tradutor por vocação. Graduado em Tradução pela
+            Universidade Gama Filho e Lead Linguist em WoW pela Blizzard. Especialista em games e textos técnicos, é o
+            pilar criativo da equipe — apaixonado por línguas, poesia e até pelo latim.</div>
+        </div>
+        <div class="team-card">
+          <div class="team-ini">KJ</div>
+          <div class="team-name">Karine Jost</div>
+          <div class="team-role" id="kj-role">QA Manager · Revisora Sênior</div>
+          <div class="team-bio" id="kj-bio">Filha de Christiane, começou a traduzir cedo seguindo os passos da mãe.
+            Encontrou seu caminho no QA, revisão e controle de qualidade na localização de World of Warcraft. Guardiã da
+            qualidade da TranslaCAT — pequena em estatura, grande em capacidade.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK FORMATS -->
+  <section id="work" class="svc-bg">
+    <div class="mx">
+      <div class="center">
+        <div class="s-lbl" id="work-label">Como Atuamos</div>
+        <h2 class="s-title" id="work-title">Formatos de Trabalho</h2>
+        <p class="s-desc" id="work-desc">Entre em contato e escolha uma forma de parceria que se alinhe perfeitamente às
+          suas necessidades.</p>
+      </div>
+      <div class="work-grid">
+        <div class="work-card">
+          <h3 class="w-title" id="work-single-t">Projeto Único</h3>
+          <p class="w-desc" id="work-single-d">Para demandas específicas, de qualquer tamanho. Entrega com SLA definido.
+          </p>
+          <ul class="w-features">
+            <li><span class="w-check">✓</span><span id="ws-f1">Análise prévia de complexidade</span></li>
+            <li><span class="w-check">✓</span><span id="ws-f2">Tradução EN→PT-BR certificada</span></li>
+            <li><span class="w-check">✓</span><span id="ws-f3">Revisão de consistência terminológica</span></li>
+            <li><span class="w-check">✓</span><span id="ws-f4">Entrega em formato solicitado</span></li>
+            <li><span class="w-check">✓</span><span id="ws-f5">Suporte pós-entrega por 7 dias</span></li>
+          </ul>
+          <a href="mailto:pm@translacat.com" class="btn-ghost" style="text-align:center;width:100%"
+            id="btn-single">Solicitar Projeto Único</a>
+        </div>
+
+        <div class="work-card w-highlight">
+          <div class="w-badge" id="work-badge">Mais Escolhido</div>
+          <h3 class="w-title" style="color:var(--red)" id="work-cont-t">Parceria Contínua</h3>
+          <p class="w-desc" id="work-cont-d">Para empresas com volume recorrente. Prioridade, memória de tradução
+            acumulada e tarifas preferenciais.</p>
+          <ul class="w-features">
+            <li><span class="w-check">✓</span><strong id="wc-f1">Tudo do plano Pontual</strong></li>
+            <li><span class="w-check">✓</span><span id="wc-f2">Memória de tradução exclusiva</span></li>
+            <li><span class="w-check">✓</span><span id="wc-f3">Glossário técnico dedicado</span></li>
+            <li><span class="w-check">✓</span><span id="wc-f4">Prioridade de fila garantida</span></li>
+            <li><span class="w-check">✓</span><span id="wc-f5">Relatórios de progresso e QA</span></li>
+            <li><span class="w-check">✓</span><span id="wc-f6">Canal direto com o linguista</span></li>
+          </ul>
+          <a href="mailto:pm@translacat.com" class="btn-red" style="text-align:center;width:100%" id="btn-cont">Ser
+            Parceiro Contínuo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="mq-bg">
+    <div class="mq-lbl" id="mq-label">Mais de 500 jogos localizados para clientes ao redor do mundo</div>
+    <div class="mq-wrap">
+      <div class="mq-track">
+        <span class="mq-item">Blizzard</span><span class="mq-item">CD Projekt RED</span><span class="mq-item">Electronic
+           Arts</span><span class="mq-item">Ubisoft</span><span class="mq-item">Konami</span><span
+           class="mq-item">Capcom</span><span class="mq-item">Telltale Games</span><span class="mq-item">Amazon
+           Games</span><span class="mq-item">Disney</span><span class="mq-item">Platinum Games</span><span
+           class="mq-item">Gearbox</span><span class="mq-item">505 Games</span><span class="mq-item">Deep
+           Silver</span><span class="mq-item">Inti Creates</span><span class="mq-item">thatgamecompany</span><span
+           class="mq-item">Warner</span><span class="mq-item">InXile</span><span class="mq-item">Neowiz</span><span
+           class="mq-item">Caterpillar</span><span class="mq-item">Scania</span><span class="mq-item">Volvo</span><span
+           class="mq-item">Apple</span><span class="mq-item">Microsoft</span><span class="mq-item">Google</span>
+        <span class="mq-item">Blizzard</span><span class="mq-item">CD Projekt RED</span><span class="mq-item">Electronic
+           Arts</span><span class="mq-item">Ubisoft</span><span class="mq-item">Konami</span><span
+           class="mq-item">Capcom</span><span class="mq-item">Telltale Games</span><span class="mq-item">Amazon
+           Games</span><span class="mq-item">Disney</span><span class="mq-item">Platinum Games</span><span
+           class="mq-item">Gearbox</span><span class="mq-item">505 Games</span><span class="mq-item">Deep
+           Silver</span><span class="mq-item">Inti Creates</span><span class="mq-item">thatgamecompany</span><span
+           class="mq-item">Warner</span><span class="mq-item">InXile</span><span class="mq-item">Neowiz</span><span
+           class="mq-item">Caterpillar</span><span class="mq-item">Scania</span><span class="mq-item">Volvo</span><span
+           class="mq-item">Apple</span><span class="mq-item">Microsoft</span><span class="mq-item">Google</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- CTA -->
+  <div class="cta" id="contact">
+    <div class="cta-in">
+      <h2 class="cta-title" id="cta-title">Pronto para o seu próximo projeto?</h2>
+      <p class="cta-sub" id="cta-sub">Entre em contato e descubra como a TranslaCAT pode levar seu conteúdo para o
+        público brasileiro com precisão e paixão.</p>
+      <a href="mailto:pm@translacat.com" class="btn-white">pm@translacat.com</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="ft-in">
+      <div class="ft-top">
+        <div>
+          <div class="ft-brand">Transla<span>CAT</span></div>
+          <div class="ft-desc" id="ft-desc">Tradução e localização especializada para games, TI e engenharia. Translate
+            + CAT — Computer Assisted Translation.</div>
+          <div class="ft-email"><a href="mailto:pm@translacat.com">pm@translacat.com</a></div>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-t" id="ft-links-t">Links</div>
+          <ul>
+            <li><a href="#" id="ft-lnk-1">Início</a></li>
+            <li><a href="#projects" id="ft-lnk-2">Projetos</a></li>
+            <li><a href="#philosophy" id="ft-lnk-3">Filosofia</a></li>
+            <li><a href="#services" id="ft-lnk-4">Serviços</a></li>
+            <li><a href="#about" id="ft-lnk-5">Sobre</a></li>
+            <li><a href="#team" id="ft-lnk-6">Equipe</a></li>
+            <li><a href="#contact" id="ft-lnk-7">Contato</a></li>
+          </ul>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-t" id="ft-svc-t">Serviços</div>
+          <ul>
+            <li><a href="#" id="ft-svc-1">Games & Videogames</a></li>
+            <li><a href="#" id="ft-svc-2">TI & Software</a></li>
+            <li><a href="#" id="ft-svc-3">Engenharia Técnica</a></li>
+            <li><a href="#" id="ft-svc-4">Literatura & Cultura</a></li>
+            <li><a href="#" id="ft-svc-5">Áudio & Dublagem</a></li>
+            <li><a href="#" id="ft-svc-6">LQA & Revisão</a></li>
+          </ul>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-t" id="ft-cli-t">Clientes</div>
+          <ul>
+            <li><a href="#">Blizzard</a></li>
+            <li><a href="#">CD Projekt RED</a></li>
+            <li><a href="#">Amazon Games</a></li>
+            <li><a href="#">Caterpillar</a></li>
+            <li><a href="#">Microsoft</a></li>
+            <li><a href="https://drive.google.com/file/d/1vAtKd_YNenFNIVVTwFgU1pyWDN9Yxjfh/view" target="_blank"
+                id="ft-cli-all">Ver todos</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ft-bot">
+        <div class="ft-copy" id="ft-copy">© 2024 TranslaCAT. Todos os direitos reservados. Powered by TranslaCAT.</div>
+        <div class="ft-mini">Transla<span>CAT</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var video = document.getElementById('team-bg-video');
+      if (video) {
+        var videoSrc = 'https://stream.mux.com/s8pMcOvMQXc4GD6AX4e1o01xFogFxipmuKltNfSYza0200.m3u8';
+        video.addEventListener('playing', function () {
+          video.style.opacity = '0.8';
+        });
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource(videoSrc);
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function () {
+            video.play().catch(function (e) { console.log('Autoplay prevented', e); });
+          });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          video.src = videoSrc;
+        }
+      }
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>
