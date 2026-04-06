@@ -844,75 +844,139 @@ section {
   content: '→'
 }
 
-/* PROJECTS */
-.proj-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 3rem
+/* PROJECTS CAROUSEL */
+.proj-carousel {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 3.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-@media(max-width:800px) {
-  .proj-grid {
-    grid-template-columns: 1fr
-  }
+.proj-carousel::before,
+.proj-carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 15rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.proj-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, var(--dark) 0%, transparent 100%);
+}
+
+.proj-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, var(--dark) 0%, transparent 100%);
+}
+
+.proj-row {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  padding: 0.5rem 0;
+}
+
+.row-1 {
+  animation: scrollLeft 60s linear infinite;
+}
+
+.row-2 {
+  animation: scrollRight 75s linear infinite;
+}
+
+.proj-carousel:hover .proj-row {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 0.75rem)); }
+}
+
+@keyframes scrollRight {
+  0% { transform: translateX(calc(-50% - 0.75rem)); }
+  100% { transform: translateX(0); }
 }
 
 .proj-card {
   position: relative;
-  border-radius: 4px;
+  border-radius: 6px;
   overflow: hidden;
-  aspect-ratio: 4/3;
+  width: 310px; /* Reduced from 400px */
+  aspect-ratio: 16 / 10;
+  flex-shrink: 0;
   border: 1px solid var(--border);
-  cursor: pointer
+  cursor: pointer;
+  background: var(--dark3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.proj-card:hover .p-overlay {
-  opacity: 1
+.proj-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--red);
+  box-shadow: 0 15px 45px rgba(0,0,0,0.4);
+  z-index: 100;
 }
 
-.proj-ph {
+.proj-card img {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-h);
-  font-size: 4.5rem;
-  font-weight: 700;
-  letter-spacing: .05em;
-  transition: transform .4s
-}
-
-.proj-card:hover .proj-ph {
-  transform: scale(1.05)
+  object-fit: cover;
+  display: block;
+  transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .proj-card:hover img {
-  transform: scale(1.05)
+  transform: scale(1.08);
 }
 
 .p-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10, 10, 14, .95) 0%, rgba(10, 10, 14, .35) 60%, transparent 100%);
-  opacity: .65;
+  background: linear-gradient(to top, rgba(10, 10, 14, .95) 0%, rgba(10, 10, 14, .3) 60%, transparent 100%);
+  opacity: .5;
   transition: opacity .3s
 }
 
+.proj-card:hover .p-overlay {
+  opacity: 0.8;
+}
+
 @media(max-width:768px) {
+  .proj-carousel {
+    gap: 1rem;
+  }
+
   .p-overlay {
-    opacity: 0.85;
-    /* More visible on mobile as there's no hover */
+    opacity: 0.75;
   }
 
   .p-info {
-    padding: 0.8rem 1rem;
+    padding: 1rem;
   }
 
   .p-name {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
+
+  .proj-card {
+    width: 240px;
+  }
+  
+  .proj-carousel::before,
+  .proj-carousel::after {
+    width: 5rem;
+  }
+
+  .row-1 { animation-duration: 40s; }
+  .row-2 { animation-duration: 50s; }
 }
 
 .p-info {
@@ -920,43 +984,39 @@ section {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1.1rem 1.4rem
+  padding: 1.5rem;
+  z-index: 5;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  transform: translateY(15px);
+  pointer-events: none;
+}
+
+.proj-card:hover .p-info {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .p-studio {
-  font-size: .63rem;
-  letter-spacing: .14em;
+  font-size: .6rem;
+  letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--red);
-  font-weight: 600;
-  margin-bottom: .25rem
+  font-weight: 700;
+  margin-bottom: .3rem;
 }
 
 .p-name {
   font-family: var(--font-h);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  line-height: 1.1
+  line-height: 1.2;
+  letter-spacing: 0.01em;
 }
 
-.p-type {
-  font-size: .73rem;
-  color: var(--muted);
-  margin-top: .25rem
-}
-
-.p-badge {
-  position: absolute;
-  top: .9rem;
-  right: .9rem;
-  background: var(--red);
-  color: #fff;
-  font-size: .58rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  padding: .22rem .55rem;
-  border-radius: 2px;
-  font-weight: 700
+/* REDUNDANT ELEMENTS REMOVED */
+.p-type, .p-badge {
+  display: none !important;
 }
 
 /* ABOUT */

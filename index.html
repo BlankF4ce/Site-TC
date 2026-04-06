@@ -16,8 +16,8 @@
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo anim-hero" style="animation-delay: 0s;">
-      <img src="img/Tc_Botão_landing_page-removebg-preview.png" style="height:80px;width:auto;object-fit:contain;filter:brightness(0)"
-        alt="TranslaCAT">
+      <img src="img/Tc_Botão_landing_page-removebg-preview.png"
+        style="height:80px;width:auto;object-fit:contain;filter:brightness(0)" alt="TranslaCAT">
     </a>
     <ul class="nav-links">
       <li class="anim-hero" style="animation-delay: 0.1s;"><a href="#projects" id="nav-projects">Projects</a></li>
@@ -88,7 +88,9 @@
       <h1 class="hero-title anim-hero" id="hero-title" style="animation-delay: 1.2s;">Precision in<br>each <span
           class="acc">word.</span><br>Passion in<br>each
         project.</h1>
-      <p class="hero-sub anim-hero" id="hero-sub" style="animation-delay: 1.8s;">Specialized translation and localization for games, IT and technical engineering. +10 million words translated. Partners with global leaders.</p>
+      <p class="hero-sub anim-hero" id="hero-sub" style="animation-delay: 1.8s;">Specialized translation and
+        localization for games, IT and technical engineering. +10 million words translated. Partners with global
+        leaders.</p>
       <div class="hero-actions anim-hero" style="animation-delay: 2.4s;">
         <a href="mailto:pm@translacat.com" class="btn-red" id="btn-orcamento">Request a Quote</a>
         <a href="#projects" class="btn-ghost" id="btn-portfolio">View Portfolio</a>
@@ -113,87 +115,369 @@
   </div>
 
   <!-- PROJECTS -->
-  <section id="projects">
+  <section id="projects" style="padding-bottom: 8rem; overflow: hidden;">
     <div class="mx">
       <div
-        style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:0">
+        style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem;margin-bottom:4rem">
         <div>
           <div class="s-lbl" id="proj-label">Portfolio</div>
           <h2 class="s-title" id="proj-title">Featured Projects</h2>
         </div>
         <a href="https://drive.google.com/file/d/1vAtKd_YNenFNIVVTwFgU1pyWDN9Yxjfh/view" target="_blank" class="btn-red"
           id="btn-portfolio-full">View Full Portfolio</a>
-      </div>
-      <div class="proj-grid">
-        <div class="proj-card">
-          <img src="img/cyberpunk.jpg"
-            style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s" alt="Cyberpunk 2077">
-          <div class="p-overlay"></div>
-          <div class="p-badge">Localização Completa</div>
-          <div class="p-info">
-            <div class="p-studio">CD Projekt RED</div>
-            <div class="p-name">Cyberpunk 2077</div>
-            <div class="p-type">Jogo base + DLC Phantom Liberty · Localização & LQA</div>
-          </div>
-        </div>
-        <div class="proj-card">
-          <img src="img/wow.avif" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s"
-            alt="World of Warcraft">
-          <div class="p-overlay"></div>
-          <div class="p-badge">Lead Linguists</div>
-          <div class="p-info">
-            <div class="p-studio">Blizzard Entertainment</div>
-            <div class="p-name">World of Warcraft</div>
-            <div class="p-type">Jogo, embalagem & marketing · Lead Linguists</div>
-          </div>
-        </div>
-        <div class="proj-card">
-          <img src="img/lifeisstrange.jpg"
-            style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s"
-            alt="Life is Strange">
-          <div class="p-overlay"></div>
-          <div class="p-badge">Localização Completa</div>
-          <div class="p-info">
-            <div class="p-studio">Dontnod / Square Enix</div>
-            <div class="p-name">Life is Strange</div>
-            <div class="p-type">Localização completa da série</div>
-          </div>
-        </div>
-        <div class="proj-card">
-          <img src="img/liesp.avif"
-            style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s" alt="Lies of P">
-          <div class="p-overlay"></div>
-          <div class="p-badge">Localização Completa</div>
-          <div class="p-info">
-            <div class="p-studio">Neowiz & Round8 Studio</div>
-            <div class="p-name">Lies of P</div>
-            <div class="p-type">Localização completa do jogo</div>
-          </div>
-        </div>
-        <div class="proj-card">
-          <img src="img/witcher3.avif"
-            style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s" alt="The Witcher 3">
-          <div class="p-overlay"></div>
+      </div> <!-- End MX -->
 
-          <div class="p-info">
-            <div class="p-studio">CD Projekt RED</div>
-            <div class="p-name">The Witcher 3</div>
+      <div class="proj-carousel">
+        <!-- Row 1: Moving Left -->
+        <div class="proj-row row-1">
+          <div class="proj-card"><img src="img/cyberpunk.jpg" loading="lazy" alt="Cyberpunk 2077">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Cyberpunk 2077</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/lifeisstrange.jpg" loading="lazy" alt="Life is Strange">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Life is Strange</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/witcher3.avif" loading="lazy" alt="The Witcher 3">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">The Witcher 3</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/atlas corpco.png" loading="lazy" alt="Atlas Copco">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Atlas Copco</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/cisco.jpg" loading="lazy" alt="Cisco">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Cisco</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/hp.png" loading="lazy" alt="HP">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">HP</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/Microsoft_logo.svg.png" loading="lazy" alt="Microsoft">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Microsoft</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/adobe.jpg" loading="lazy" alt="Adobe">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Adobe</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/apple logo.jpg" loading="lazy" alt="Apple">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Apple</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/google.png" loading="lazy" alt="Google">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Google</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/intel.jpg" loading="lazy" alt="Intel">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Intel</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/lenovo.png" loading="lazy" alt="Lenovo">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Lenovo</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/oracle.jpg" loading="lazy" alt="Oracle">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Oracle</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/visa.jpg" loading="lazy" alt="Visa">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Visa</div>
+            </div>
+          </div>
 
+          <!-- Duplicate for seamless loop -->
+          <div class="proj-card"><img src="img/cyberpunk.jpg" loading="lazy" alt="Cyberpunk 2077">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Cyberpunk 2077</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/lifeisstrange.jpg" loading="lazy" alt="Life is Strange">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Life is Strange</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/witcher3.avif" loading="lazy" alt="The Witcher 3">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">The Witcher 3</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/atlas corpco.png" loading="lazy" alt="Atlas Copco">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Atlas Copco</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/cisco.jpg" loading="lazy" alt="Cisco">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Cisco</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/hp.png" loading="lazy" alt="HP">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">HP</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/Microsoft_logo.svg.png" loading="lazy" alt="Microsoft">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Microsoft</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/adobe.jpg" loading="lazy" alt="Adobe">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Adobe</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/apple logo.jpg" loading="lazy" alt="Apple">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Apple</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/google.png" loading="lazy" alt="Google">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Google</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/intel.jpg" loading="lazy" alt="Intel">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Intel</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/lenovo.png" loading="lazy" alt="Lenovo">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Lenovo</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/oracle.jpg" loading="lazy" alt="Oracle">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Oracle</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/visa.jpg" loading="lazy" alt="Visa">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Visa</div>
+            </div>
           </div>
         </div>
-        <div class="proj-card">
-          <img src="img/sky.avif" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s"
-            alt="Sky: Children of the Light">
-          <div class="p-overlay"></div>
-          <div class="p-badge">Localização Completa</div>
-          <div class="p-info">
-            <div class="p-studio">thatgamecompany</div>
-            <div class="p-name">Sky: Children of the Light</div>
-            <div class="p-type">Localização completa & marketing</div>
+
+        <!-- Row 2: Moving Right -->
+        <div class="proj-row row-2">
+          <div class="proj-card"><img src="img/wow.avif" loading="lazy" alt="World of Warcraft">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">World of Warcraft</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/liesp.avif" loading="lazy" alt="Lies of P">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Lies of P</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/sky.avif" loading="lazy" alt="Sky: Children of the Light">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Sky: Children of the Light</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/CAT.png" loading="lazy" alt="Caterpillar">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Caterpillar</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/GM.png" loading="lazy" alt="General Motors">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">General Motors</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/jaguar.jpg" loading="lazy" alt="Jaguar">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Jaguar</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/ufc.jpg" loading="lazy" alt="UFC">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">UFC</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/amazon.jpg" loading="lazy" alt="Amazon">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Amazon</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/avianca.png" loading="lazy" alt="Avianca">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Avianca</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/ibm.jpg" loading="lazy" alt="IBM">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">IBM</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/Konami.png" loading="lazy" alt="Konami">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Konami</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/nokia.jpg" loading="lazy" alt="Nokia">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Nokia</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/tetra pak.png" loading="lazy" alt="Tetra Pak">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Tetra Pak</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/kodak.png" loading="lazy" alt="Kodak">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Kodak</div>
+            </div>
+          </div>
+
+          <!-- Duplicate for seamless loop -->
+          <div class="proj-card"><img src="img/wow.avif" loading="lazy" alt="World of Warcraft">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">World of Warcraft</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/liesp.avif" loading="lazy" alt="Lies of P">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Lies of P</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/sky.avif" loading="lazy" alt="Sky: Children of the Light">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Sky: Children of the Light</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/CAT.png" loading="lazy" alt="Caterpillar">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Caterpillar</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/GM.png" loading="lazy" alt="General Motors">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">General Motors</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/jaguar.jpg" loading="lazy" alt="Jaguar">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Jaguar</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/ufc.jpg" loading="lazy" alt="UFC">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">UFC</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/amazon.jpg" loading="lazy" alt="Amazon">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Amazon</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/avianca.png" loading="lazy" alt="Avianca">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Avianca</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/ibm.jpg" loading="lazy" alt="IBM">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">IBM</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/Konami.png" loading="lazy" alt="Konami">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Konami</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/nokia.jpg" loading="lazy" alt="Nokia">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Nokia</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/tetra pak.png" loading="lazy" alt="Tetra Pak">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Tetra Pak</div>
+            </div>
+          </div>
+          <div class="proj-card"><img src="img/kodak.png" loading="lazy" alt="Kodak">
+            <div class="p-overlay"></div>
+            <div class="p-info">
+              <div class="p-name">Kodak</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+
+
   </section>
 
   <!-- PHILOSOPHY -->
@@ -220,7 +504,8 @@
         <div style="display:flex;align-items:center;justify-content:center;gap:.9rem;margin-bottom:1.2rem">
           <div style="width:24px;height:1px;background:rgba(255,255,255,0.18)"></div>
           <span id="philo-masim"
-            style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);font-family:var(--font-h)">but rather</span>
+            style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);font-family:var(--font-h)">but
+            rather</span>
           <div style="width:24px;height:1px;background:rgba(255,255,255,0.18)"></div>
         </div>
         <p id="philo-q2"
@@ -244,31 +529,36 @@
       <div class="center">
         <div class="s-lbl" id="svc-label">What we do</div>
         <h2 class="s-title" id="svc-title">Our Services</h2>
-        <p class="s-desc" id="svc-desc">A diverse team with specialists in literary, audio, system and visual — all under one roof.</p>
+        <p class="s-desc" id="svc-desc">A diverse team with specialists in literary, audio, system and visual — all
+          under one roof.</p>
       </div>
       <div class="svc-grid">
         <div class="svc-card"
           style="background-image: linear-gradient(rgba(24, 24, 31, 0.8), rgba(24, 24, 31, 0.95)), url('img/games.jpg'); background-size: cover; background-position: center;">
           <div class="svc-name" id="svc1-name">Games & Videogames</div>
-          <div class="svc-txt" id="svc1-txt">Full game localization: UI, engine, dubbing, marketing and LQA. From casual games to the biggest titles in the global market.</div>
+          <div class="svc-txt" id="svc1-txt">Full game localization: UI, engine, dubbing, marketing and LQA. From casual
+            games to the biggest titles in the global market.</div>
           <a href="#projects" class="svc-lnk" id="svc1-lnk">Learn More</a>
         </div>
         <div class="svc-card"
           style="background-image: linear-gradient(rgba(24, 24, 31, 0.8), rgba(24, 24, 31, 0.95)), url('img/ti.jpg'); background-size: cover; background-position: center;">
           <div class="svc-name" id="svc2-name">IT & Software</div>
-          <div class="svc-txt" id="svc2-txt">Translation of interfaces, technical documentation and marketing materials for companies like Apple, Microsoft, Google, IBM and dozens more.</div>
+          <div class="svc-txt" id="svc2-txt">Translation of interfaces, technical documentation and marketing materials
+            for companies like Apple, Microsoft, Google, IBM and dozens more.</div>
           <a href="#projects" class="svc-lnk" id="svc2-lnk">Learn More</a>
         </div>
         <div class="svc-card"
           style="background-image: linear-gradient(rgba(24, 24, 31, 0.8), rgba(24, 24, 31, 0.95)), url('img/enge.jpg'); background-size: cover; background-position: center;">
           <div class="svc-name" id="svc3-name">Engineering & Technical</div>
-          <div class="svc-txt" id="svc3-txt">Millions of words translated in heavy machinery manuals and automotive documentation for Caterpillar, Scania, Rolls Royce and others.</div>
+          <div class="svc-txt" id="svc3-txt">Millions of words translated in heavy machinery manuals and automotive
+            documentation for Caterpillar, Scania, Rolls Royce and others.</div>
           <a href="#projects" class="svc-lnk" id="svc3-lnk">Learn More</a>
         </div>
         <div class="svc-card"
           style="background-image: linear-gradient(rgba(24, 24, 31, 0.8), rgba(24, 24, 31, 0.95)), url('img/liter.jpg'); background-size: cover; background-position: center;">
           <div class="svc-name" id="svc4-name">Literature & Culture</div>
-          <div class="svc-txt" id="svc4-txt">Translation of novels, adventure series and cultural content available on Amazon.com.br, plus manga and audiovisual material.</div>
+          <div class="svc-txt" id="svc4-txt">Translation of novels, adventure series and cultural content available on
+            Amazon.com.br, plus manga and audiovisual material.</div>
           <a href="#projects" class="svc-lnk" id="svc4-lnk">Learn More</a>
         </div>
       </div>
@@ -288,28 +578,33 @@
               <div class="ab-num">01</div>
               <div>
                 <div class="ab-t" id="ab1-t">25+ years of combined IT experience</div>
-                <div class="ab-d" id="ab1-d">Our founder worked for over 25 years as a programmer, systems analyst and network analyst for the Brazilian federal government — before becoming a reference in technical translation.</div>
+                <div class="ab-d" id="ab1-d">Our founder worked for over 25 years as a programmer, systems analyst and
+                  network analyst for the Brazilian federal government — before becoming a reference in technical
+                  translation.</div>
               </div>
             </div>
             <div class="ab-pt">
               <div class="ab-num">02</div>
               <div>
                 <div class="ab-t" id="ab2-t">Certified by the Ministry of Education</div>
-                <div class="ab-d" id="ab2-d">MEC-recognized translator, with a track record as Lead Linguist in the localization of World of Warcraft by Blizzard Entertainment into Brazilian Portuguese.</div>
+                <div class="ab-d" id="ab2-d">MEC-recognized translator, with a track record as Lead Linguist in the
+                  localization of World of Warcraft by Blizzard Entertainment into Brazilian Portuguese.</div>
               </div>
             </div>
             <div class="ab-pt">
               <div class="ab-num">03</div>
               <div>
                 <div class="ab-t" id="ab3-t">Mastery of all CAT tools</div>
-                <div class="ab-d" id="ab3-d">One of the few companies with practical mastery of virtually every computer-assisted translation tool available on the market.</div>
+                <div class="ab-d" id="ab3-d">One of the few companies with practical mastery of virtually every
+                  computer-assisted translation tool available on the market.</div>
               </div>
             </div>
             <div class="ab-pt">
               <div class="ab-num">04</div>
               <div>
                 <div class="ab-t" id="ab4-t">Diverse and specialized team</div>
-                <div class="ab-d" id="ab4-d">Specialists in literary, audio, system and visual. Senior PMs, creative translators, proofreaders and game engine localizers.</div>
+                <div class="ab-d" id="ab4-d">Specialists in literary, audio, system and visual. Senior PMs, creative
+                  translators, proofreaders and game engine localizers.</div>
               </div>
             </div>
           </div>
@@ -360,26 +655,34 @@
       <div class="center">
         <div class="s-lbl" id="team-label">Our Team</div>
         <h2 class="s-title" id="team-title">The people behind TranslaCAT</h2>
-        <p class="s-desc" id="team-desc">A trio of specialists passionate about language, technology and the art of communicating with precision.</p>
+        <p class="s-desc" id="team-desc">A trio of specialists passionate about language, technology and the art of
+          communicating with precision.</p>
       </div>
       <div class="team-grid">
         <div class="team-card">
           <div class="team-ini">CJ</div>
           <div class="team-name">Christiane Jost</div>
           <div class="team-role" id="cj-role">Founder · Lead Linguist</div>
-          <div class="team-bio" id="cj-bio">Over 25 years as a programmer and systems analyst for the federal government. Lead Linguist in the localization of World of Warcraft by Blizzard. With over 10 million words translated, she is known as the "translation machine" and "human glossary" for her unmatched precision in technical writing.</div>
+          <div class="team-bio" id="cj-bio">Over 25 years as a programmer and systems analyst for the federal
+            government. Lead Linguist in the localization of World of Warcraft by Blizzard. With over 10 million words
+            translated, she is known as the "translation machine" and "human glossary" for her unmatched precision in
+            technical writing.</div>
         </div>
         <div class="team-card">
           <div class="team-ini">DZ</div>
           <div class="team-name">Daniel Zandonadi</div>
           <div class="team-role" id="dz-role">Lead Linguist · Creative Director</div>
-          <div class="team-bio" id="dz-bio">Pharmacist by training, translator by vocation. Graduated in Translation from Universidade Gama Filho and Lead Linguist on WoW by Blizzard. Specialist in games and technical texts, the creative pillar of the team — passionate about languages, poetry and even Latin.</div>
+          <div class="team-bio" id="dz-bio">Pharmacist by training, translator by vocation. Graduated in Translation
+            from Universidade Gama Filho and Lead Linguist on WoW by Blizzard. Specialist in games and technical texts,
+            the creative pillar of the team — passionate about languages, poetry and even Latin.</div>
         </div>
         <div class="team-card">
           <div class="team-ini">KJ</div>
           <div class="team-name">Karine Jost</div>
           <div class="team-role" id="kj-role">QA Manager · Senior Proofreader</div>
-          <div class="team-bio" id="kj-bio">Christiane's daughter, she began translating early on in her mother's footsteps. She found her path in QA, proofreading and quality control during the World of Warcraft localization. TranslaCAT's guardian of quality — small in stature, great in capacity.</div>
+          <div class="team-bio" id="kj-bio">Christiane's daughter, she began translating early on in her mother's
+            footsteps. She found her path in QA, proofreading and quality control during the World of Warcraft
+            localization. TranslaCAT's guardian of quality — small in stature, great in capacity.</div>
         </div>
       </div>
     </div>
@@ -391,7 +694,8 @@
       <div class="center">
         <div class="s-lbl" id="work-label">How We Work</div>
         <h2 class="s-title" id="work-title">Partnership Formats</h2>
-        <p class="s-desc" id="work-desc">Get in touch and choose a partnership model that perfectly aligns with your needs.</p>
+        <p class="s-desc" id="work-desc">Get in touch and choose a partnership model that perfectly aligns with your
+          needs.</p>
       </div>
       <div class="work-grid">
         <div class="work-card">
@@ -412,7 +716,8 @@
         <div class="work-card w-highlight">
           <div class="w-badge" id="work-badge">Most Chosen</div>
           <h3 class="w-title" style="color:var(--red)" id="work-cont-t">Continuous Partnership</h3>
-          <p class="w-desc" id="work-cont-d">For companies with recurring volume. Priority, accumulated translation memory and preferential rates.</p>
+          <p class="w-desc" id="work-cont-d">For companies with recurring volume. Priority, accumulated translation
+            memory and preferential rates.</p>
           <ul class="w-features">
             <li><span class="w-check">✓</span><strong id="wc-f1">Everything in Single Project</strong></li>
             <li><span class="w-check">✓</span><span id="wc-f2">Exclusive translation memory</span></li>
@@ -434,23 +739,29 @@
     <div class="mq-wrap">
       <div class="mq-track">
         <span class="mq-item">Blizzard</span><span class="mq-item">CD Projekt RED</span><span class="mq-item">Electronic
-           Arts</span><span class="mq-item">Ubisoft</span><span class="mq-item">Konami</span><span
-           class="mq-item">Capcom</span><span class="mq-item">Telltale Games</span><span class="mq-item">Amazon
-           Games</span><span class="mq-item">Disney</span><span class="mq-item">Platinum Games</span><span
-           class="mq-item">Gearbox</span><span class="mq-item">505 Games</span><span class="mq-item">Deep
-           Silver</span><span class="mq-item">Inti Creates</span><span class="mq-item">thatgamecompany</span><span
-           class="mq-item">Warner</span><span class="mq-item">InXile</span><span class="mq-item">Neowiz</span><span
-           class="mq-item">Caterpillar</span><span class="mq-item">Scania</span><span class="mq-item">Volvo</span><span
-           class="mq-item">Apple</span><span class="mq-item">Microsoft</span><span class="mq-item">Google</span>
+          Arts</span><span class="mq-item">Ubisoft</span><span class="mq-item">Konami</span><span
+          class="mq-item">Capcom</span><span class="mq-item">Telltale Games</span><span class="mq-item">Amazon
+          Games</span><span class="mq-item">Disney</span><span class="mq-item">Platinum Games</span><span
+          class="mq-item">Gearbox</span><span class="mq-item">505 Games</span><span class="mq-item">Deep
+          Silver</span><span class="mq-item">Inti Creates</span><span class="mq-item">thatgamecompany</span><span
+          class="mq-item">Warner</span><span class="mq-item">InXile</span><span class="mq-item">Neowiz</span><span
+          class="mq-item">Caterpillar</span><span class="mq-item">Scania</span><span class="mq-item">Volvo</span><span
+          class="mq-item">Apple</span><span class="mq-item">Microsoft</span><span class="mq-item">Google</span><span
+          class="mq-item">Adobe</span><span class="mq-item">IBM</span><span class="mq-item">Intel</span><span
+          class="mq-item">Oracle</span><span class="mq-item">Lenovo</span><span class="mq-item">Nokia</span><span
+          class="mq-item">Avianca</span><span class="mq-item">Tetra Pak</span><span class="mq-item">Visa</span>
         <span class="mq-item">Blizzard</span><span class="mq-item">CD Projekt RED</span><span class="mq-item">Electronic
-           Arts</span><span class="mq-item">Ubisoft</span><span class="mq-item">Konami</span><span
-           class="mq-item">Capcom</span><span class="mq-item">Telltale Games</span><span class="mq-item">Amazon
-           Games</span><span class="mq-item">Disney</span><span class="mq-item">Platinum Games</span><span
-           class="mq-item">Gearbox</span><span class="mq-item">505 Games</span><span class="mq-item">Deep
-           Silver</span><span class="mq-item">Inti Creates</span><span class="mq-item">thatgamecompany</span><span
-           class="mq-item">Warner</span><span class="mq-item">InXile</span><span class="mq-item">Neowiz</span><span
-           class="mq-item">Caterpillar</span><span class="mq-item">Scania</span><span class="mq-item">Volvo</span><span
-           class="mq-item">Apple</span><span class="mq-item">Microsoft</span><span class="mq-item">Google</span>
+          Arts</span><span class="mq-item">Ubisoft</span><span class="mq-item">Konami</span><span
+          class="mq-item">Capcom</span><span class="mq-item">Telltale Games</span><span class="mq-item">Amazon
+          Games</span><span class="mq-item">Disney</span><span class="mq-item">Platinum Games</span><span
+          class="mq-item">Gearbox</span><span class="mq-item">505 Games</span><span class="mq-item">Deep
+          Silver</span><span class="mq-item">Inti Creates</span><span class="mq-item">thatgamecompany</span><span
+          class="mq-item">Warner</span><span class="mq-item">InXile</span><span class="mq-item">Neowiz</span><span
+          class="mq-item">Caterpillar</span><span class="mq-item">Scania</span><span class="mq-item">Volvo</span><span
+          class="mq-item">Apple</span><span class="mq-item">Microsoft</span><span class="mq-item">Google</span><span
+          class="mq-item">Adobe</span><span class="mq-item">IBM</span><span class="mq-item">Intel</span><span
+          class="mq-item">Oracle</span><span class="mq-item">Lenovo</span><span class="mq-item">Nokia</span><span
+          class="mq-item">Avianca</span><span class="mq-item">Tetra Pak</span><span class="mq-item">Visa</span>
       </div>
     </div>
   </div>
@@ -460,7 +771,8 @@
   <div class="cta" id="contact">
     <div class="cta-in">
       <h2 class="cta-title" id="cta-title">Ready for your next project?</h2>
-      <p class="cta-sub" id="cta-sub">Get in touch and discover how TranslaCAT can bring your content to life with precision and passion.</p>
+      <p class="cta-sub" id="cta-sub">Get in touch and discover how TranslaCAT can bring your content to life with
+        precision and passion.</p>
       <a href="mailto:pm@translacat.com" class="btn-white">pm@translacat.com</a>
     </div>
   </div>
@@ -471,7 +783,8 @@
       <div class="ft-top">
         <div>
           <div class="ft-brand">Transla<span>CAT</span></div>
-          <div class="ft-desc" id="ft-desc">Specialized translation and localization for games, IT and engineering. Translate + CAT — Computer Assisted Translation.</div>
+          <div class="ft-desc" id="ft-desc">Specialized translation and localization for games, IT and engineering.
+            Translate + CAT — Computer Assisted Translation.</div>
           <div class="ft-email"><a href="mailto:pm@translacat.com">pm@translacat.com</a></div>
         </div>
         <div class="ft-col">
